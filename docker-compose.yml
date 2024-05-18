@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cassandra:
+    image: cassandra:4.0
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    volumes:
+      - ./docker-data/cassandra:/var/lib/cassandra
+    environment:
+      - MAX_HEAP_SIZE=256M
+      - HEAP_NEWSIZE=128M
